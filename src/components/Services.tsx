@@ -85,7 +85,7 @@ export default function Services() {
               <span
                 style={{
                   display: "inline-block",
-                  backgroundColor: "rgba(232, 93, 4, 0.12)",
+                  backgroundColor: "rgba(107, 199, 87, 0.14)",
                   color: "var(--color-orange)",
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                   fontWeight: 600,
@@ -93,7 +93,7 @@ export default function Services() {
                   letterSpacing: "0.04em",
                   padding: "6px 14px",
                   borderRadius: 100,
-                  border: "1px solid rgba(232, 93, 4, 0.25)",
+                  border: "1px solid rgba(107, 199, 87, 0.3)",
                 }}
               >
                 {service.price}

@@ -6,9 +6,9 @@
   --color-surface: hsl(216, 12%, 14%);
   --color-surface-mid: hsl(216, 10%, 18%);
   --color-border: hsl(216, 10%, 22%);
-  --color-orange: hsl(22, 97%, 47%);
-  --color-orange-hover: hsl(22, 97%, 42%);
-  --color-orange-glow: hsla(22, 97%, 47%, 0.18);
+  --color-orange: hsl(109, 50%, 56%);
+  --color-orange-hover: hsl(109, 55%, 46%);
+  --color-orange-glow: hsla(109, 50%, 56%, 0.18);
   --color-grey-light: hsl(0, 0%, 91%);
   --color-grey-mid: hsl(0, 0%, 62%);
   --color-grey-dark: hsl(0, 0%, 38%);
