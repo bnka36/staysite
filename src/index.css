@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  /* Core Palette */
+  --color-bg: hsl(216, 14%, 10%);
+  --color-surface: hsl(216, 12%, 14%);
+  --color-surface-mid: hsl(216, 10%, 18%);
+  --color-border: hsl(216, 10%, 22%);
+  --color-orange: hsl(22, 97%, 47%);
+  --color-orange-hover: hsl(22, 97%, 42%);
+  --color-orange-glow: hsla(22, 97%, 47%, 0.18);
+  --color-grey-light: hsl(0, 0%, 91%);
+  --color-grey-mid: hsl(0, 0%, 62%);
+  --color-grey-dark: hsl(0, 0%, 38%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --text-hero: clamp(44px, 7.5vw, 130px);
+  --text-h2: clamp(32px, 4vw, 60px);
+  --text-h3: clamp(20px, 2.2vw, 28px);
+
+  --section-px: clamp(24px, 5vw, 96px);
+  --section-py: clamp(64px, 8vw, 120px);
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-grey-light);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.scrollbar-x {
+  -webkit-overflow-scrolling: touch;
+}
