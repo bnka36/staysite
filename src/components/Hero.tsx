@@ -27,7 +27,7 @@ export default function Hero() {
       >
         {/* Layer 1 — photo réelle de la façade YHT Autos */}
         <img
-          src="/images/facade-2.webp"
+          src={`${import.meta.env.BASE_URL}images/facade-2.webp`}
           alt="Façade et atelier du garage YHT Autos à Sète"
           className="absolute inset-0 w-full h-full object-cover object-center"
           style={{ zIndex: 1 }}
