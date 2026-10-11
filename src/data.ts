@@ -1,41 +1,36 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  Car,
+  Wrench,
+  Droplets,
+  ScanLine,
   ClipboardCheck,
-  Gauge,
   CircleDot,
   Circle,
   Wind,
-  ScanLine,
-  Wrench,
-  Battery,
 } from "lucide-react";
 
-/**
- * ⚠️ À PERSONNALISER — remplace les valeurs ci-dessous par les vraies
- * informations de YHT Auto Sète (adresse, téléphone, horaires, prix réels).
- * Tout le site lit ces données depuis ce fichier unique.
- */
 export const business = {
-  name: "YHT Auto",
+  name: "YHT Autos",
   city: "Sète",
-  tagline: "Garage Indépendant · Hérault",
-  phoneDisplay: "04 67 00 00 00",
-  phoneHref: "tel:+33467000000",
-  email: "contact@yhtauto-sete.fr",
+  tagline: "Votre Expert en Mécanique Automobile",
+  phoneDisplay: "06 26 26 26 58",
+  phoneHref: "tel:+33626262658",
+  email: "contact@yhtautos.fr",
   address: {
-    street: "12 Avenue de la République",
+    street: "9 Rue d'Ingril",
     postalCode: "34200",
     city: "Sète",
   },
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=YHT+Auto+Sete",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=YHT+Autos+9+Rue+d%27Ingril+34200+Sete",
   hours: [
-    { day: "Lundi", time: "8h00 – 12h00 / 14h00 – 18h00" },
-    { day: "Mardi", time: "8h00 – 12h00 / 14h00 – 18h00" },
-    { day: "Mercredi", time: "8h00 – 12h00 / 14h00 – 18h00" },
-    { day: "Jeudi", time: "8h00 – 12h00 / 14h00 – 18h00" },
-    { day: "Vendredi", time: "8h00 – 12h00 / 14h00 – 18h00" },
-    { day: "Samedi", time: "8h00 – 12h00" },
-    { day: "Dimanche", time: "Fermé" },
+    { day: "Lundi", time: "8h00 – 20h30" },
+    { day: "Mardi", time: "8h00 – 20h30" },
+    { day: "Mercredi", time: "8h00 – 20h30" },
+    { day: "Jeudi", time: "8h00 – 20h30" },
+    { day: "Vendredi", time: "8h00 – 20h30" },
+    { day: "Samedi", time: "8h00 – 20h30" },
+    { day: "Dimanche", time: "9h00 – 17h00" },
   ],
 };
 
@@ -46,20 +41,39 @@ export type Service = {
   price: string;
 };
 
+/**
+ * ⚠️ Tarifs indicatifs — à remplacer par les vrais prix de YHT Autos
+ * (non communiqués à ce stade). Les services ci-dessous correspondent
+ * à ceux affichés sur l'enseigne du garage.
+ */
 export const services: Service[] = [
+  {
+    name: "Achat & Vente de Véhicule",
+    icon: Car,
+    description:
+      "Achat et vente de véhicules d'occasion, préparation et service sur mesure. Performance, fiabilité et transparence garanties.",
+    price: "Sur devis",
+  },
+  {
+    name: "Mécanique de Précision",
+    icon: Wrench,
+    description:
+      "Réparation et entretien moteur, embrayage, transmission. De la panne capteur à la révision complète, toutes marques.",
+    price: "Devis gratuit",
+  },
+  {
+    name: "Diagnostic Toutes Marques",
+    icon: ScanLine,
+    description:
+      "Lecture valise OBD moteur, ABS, airbag, boîte de vitesses. On lit les codes et on vous explique ce qu'ils signifient vraiment.",
+    price: "Dès 35 €",
+  },
   {
     name: "Entretien & Révision",
     icon: ClipboardCheck,
     description:
       "Vidange, filtres, courroies, niveaux. Entretien constructeur sans perte de garantie, carnet d'entretien tamponné.",
     price: "Dès 79 €",
-  },
-  {
-    name: "Moteur & Mécanique",
-    icon: Gauge,
-    description:
-      "Diagnostic et réparation moteur. De la panne capteur à la révision complète — on cherche la vraie cause, pas juste le symptôme.",
-    price: "Devis gratuit",
   },
   {
     name: "Freinage",
@@ -72,7 +86,7 @@ export const services: Service[] = [
     name: "Pneumatiques",
     icon: Circle,
     description:
-      "Montage et équilibrage toutes marques et dimensions. Budget, milieu de gamme ou premium — équilibrage offert à chaque pose.",
+      "Montage et équilibrage toutes marques et dimensions. Équilibrage offert à chaque pose.",
     price: "Dès 45 € posé",
   },
   {
@@ -83,25 +97,11 @@ export const services: Service[] = [
     price: "Dès 49 €",
   },
   {
-    name: "Diagnostic Électronique",
-    icon: ScanLine,
+    name: "Entretien & Lavage Automobile",
+    icon: Droplets,
     description:
-      "Lecture valise OBD moteur, ABS, airbag, boîte de vitesses. On lit les codes et on vous explique ce qu'ils signifient vraiment.",
-    price: "Dès 35 €",
-  },
-  {
-    name: "Embrayage & Transmission",
-    icon: Wrench,
-    description:
-      "Remplacement d'embrayage, kit complet, cardans et transmission. Pièces d'origine ou équivalentes garanties.",
-    price: "Devis gratuit",
-  },
-  {
-    name: "Batterie & Électricité",
-    icon: Battery,
-    description:
-      "Contrôle et remplacement de batterie, démarreur, alternateur. Diagnostic électrique complet du véhicule.",
-    price: "Dès 39 €",
+      "Lavage intérieur et extérieur, remise en état avant vente ou simple entretien. Véhicule rendu impeccable.",
+    price: "Dès 19 €",
   },
 ];
 
@@ -112,9 +112,9 @@ export const trustPoints = [
       "On vous communique le prix avant de toucher au véhicule. Si un besoin supplémentaire apparaît, on vous appelle avant de continuer. Toujours.",
   },
   {
-    title: "Garantie 12 mois pièces",
+    title: "Mécanique de précision",
     detail:
-      "Toute pièce posée chez nous est garantie 12 mois ou 15 000 km, selon la première limite atteinte.",
+      "Diagnostic toutes marques, réparations sérieuses. Performance, fiabilité et transparence au service de votre véhicule.",
   },
   {
     title: "Service rapide",
@@ -124,7 +124,7 @@ export const trustPoints = [
   {
     title: "Garage de confiance à Sète",
     detail:
-      "Mécaniciens expérimentés, toutes marques. On vous explique chaque réparation en toute transparence.",
+      "Achat, vente, entretien et réparation — un seul interlocuteur pour tout votre véhicule, au 9 Rue d'Ingril.",
   },
 ];
 
@@ -136,15 +136,15 @@ export const pricingRows = [
   { service: "Recharge climatisation", price: "Dès 49 €", time: "30 – 45 min" },
   { service: "Diagnostic électronique", price: "Dès 35 €", time: "30 min" },
   { service: "Pneu monté + équilibré (unité)", price: "Dès 45 €", time: "20 min" },
-  { service: "Changement de batterie", price: "Dès 39 €", time: "20 min" },
+  { service: "Lavage intérieur / extérieur", price: "Dès 19 €", time: "30 – 45 min" },
 ];
 
 export const marqueeItems = [
-  "Garage Indépendant",
-  "Mécaniciens Expérimentés",
-  "Toutes Marques",
+  "YHT Autos",
+  "Achat & Vente de Véhicules",
+  "Mécanique de Précision",
+  "Diagnostic Toutes Marques",
+  "Entretien & Lavage",
   "Devis Gratuit",
-  "Garantie 12 Mois Pièces",
-  "Service Rapide",
   "Sète, Hérault",
 ];

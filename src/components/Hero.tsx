@@ -25,17 +25,12 @@ export default function Hero() {
         className="relative overflow-hidden"
         style={{ height: "100svh", minHeight: 640 }}
       >
-        {/* Layer 1 — background (remplacer par une vraie photo du garage : /public/hero.jpg) */}
-        <div
-          className="absolute inset-0"
-          role="img"
-          aria-label="Atelier du garage YHT Auto"
-          style={{
-            zIndex: 1,
-            backgroundColor: "#15181d",
-            backgroundImage:
-              "radial-gradient(circle at 78% 30%, rgba(232,93,4,0.16) 0%, transparent 45%), radial-gradient(circle at 85% 75%, rgba(232,93,4,0.10) 0%, transparent 40%), repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 34px)",
-          }}
+        {/* Layer 1 — photo réelle de la façade YHT Autos */}
+        <img
+          src="/images/facade-2.webp"
+          alt="Façade et atelier du garage YHT Autos à Sète"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          style={{ zIndex: 1 }}
         />
 
         {/* Layer 2 — watermark */}
