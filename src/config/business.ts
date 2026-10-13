@@ -75,12 +75,12 @@ export const business = {
  * "not configured yet", never substitute a placeholder-looking-real value.
  */
 export const unverified = {
-  /** Landline / mobile number, e.g. "0523 00 00 00". */
-  phone: null as string | null,
+  /** Provided directly by the restaurant/owner contact — not re-verified against an official public source. */
+  phone: "+212 6 61 69 35 28" as string | null,
   /** tel: href, e.g. "tel:+212523000000". */
-  phoneHref: null as string | null,
+  phoneHref: "tel:+212661693528" as string | null,
   /** WhatsApp number in international format without "+", e.g. "212600000000". */
-  whatsapp: null as string | null,
+  whatsapp: "212661693528" as string | null,
   /** Weekly opening hours — only set once confirmed with the restaurant. */
   hours: null as DayHours[] | null,
   socials: {
