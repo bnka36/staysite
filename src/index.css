@@ -1,29 +1,32 @@
 @import "tailwindcss";
 
-:root {
-  /* Core Palette */
-  --color-bg: hsl(216, 14%, 10%);
-  --color-surface: hsl(216, 12%, 14%);
-  --color-surface-mid: hsl(216, 10%, 18%);
-  --color-border: hsl(216, 10%, 22%);
-  --color-orange: hsl(109, 50%, 56%);
-  --color-orange-hover: hsl(109, 55%, 46%);
-  --color-orange-glow: hsla(109, 50%, 56%, 0.18);
-  --color-grey-light: hsl(0, 0%, 91%);
-  --color-grey-mid: hsl(0, 0%, 62%);
-  --color-grey-dark: hsl(0, 0%, 38%);
-  --color-white: hsl(0, 0%, 100%);
+/*
+ * Dar El Hout — design tokens
+ * Palette (from brief): deep navy, ocean blue, turquoise, ivory white,
+ * champagne gold, dark grey.
+ */
+@theme {
+  --color-navy: #092a3a;
+  --color-ocean: #126c80;
+  --color-turquoise: #24a6ad;
+  --color-ivory: #faf8f3;
+  --color-gold: #c9a66b;
+  --color-grey: #25313a;
 
-  --text-hero: clamp(44px, 7.5vw, 130px);
-  --text-h2: clamp(32px, 4vw, 60px);
-  --text-h3: clamp(20px, 2.2vw, 28px);
-
-  --section-px: clamp(24px, 5vw, 96px);
-  --section-py: clamp(64px, 8vw, 120px);
+  --font-display: "Playfair Display", "Noto Naskh Arabic", serif;
+  --font-body: "Inter", "Manrope", "Noto Naskh Arabic", sans-serif;
+  --font-arabic: "Noto Naskh Arabic", "Cairo", sans-serif;
 
   --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-lg: 26px;
+
+  --section-px: clamp(20px, 5vw, 96px);
+  --section-py: clamp(56px, 8vw, 120px);
+}
+
+:root {
+  color-scheme: light;
 }
 
 * {
@@ -34,37 +37,63 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
 body {
   margin: 0;
-  background-color: var(--color-bg);
-  color: var(--color-grey-light);
-  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--color-ivory);
+  color: var(--color-grey);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+}
+
+html[dir="rtl"] body,
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4 {
+  font-family: var(--font-arabic);
 }
 
 a {
   color: inherit;
 }
 
-@keyframes marquee-scroll {
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-navy);
+}
+
+.section-px {
+  padding-left: var(--section-px);
+  padding-right: var(--section-px);
+}
+
+.section-py {
+  padding-top: var(--section-py);
+  padding-bottom: var(--section-py);
+}
+
+/* Scrollbar for the horizontal pricing / menu tables on small screens */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--color-gold);
+  border-radius: 10px;
+}
+
+@keyframes fade-in-up {
   from {
-    transform: translateX(0);
+    opacity: 0;
+    transform: translateY(16px);
   }
   to {
-    transform: translateX(-50%);
+    opacity: 1;
+    transform: translateY(0);
   }
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee-scroll 35s linear infinite;
-}
-
-.marquee-track:hover {
-  animation-play-state: paused;
-}
-
-.scrollbar-x {
-  -webkit-overflow-scrolling: touch;
 }
