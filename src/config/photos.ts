@@ -15,8 +15,8 @@
 const base = `${import.meta.env.BASE_URL}images`;
 
 export const restaurantPhotos = {
-  hero: `${base}/restaurant/hero.jpg`,
-  facade1: `${base}/restaurant/facade-1.jpg`,
+  hero: `${base}/restaurant/hero.webp`,
+  facade1: `${base}/restaurant/facade-1.webp`,
   facade2: `${base}/restaurant/facade-2.jpg`,
   salle1: `${base}/restaurant/salle-1.jpg`,
   salle2: `${base}/restaurant/salle-2.jpg`,
