@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
 import { useI18n } from "../hooks/useI18n";
 import { usePageTitle } from "../hooks/usePageTitle";
-import SmartImage from "../components/SmartImage";
-import { restaurantPhotos, stockPhotos } from "../config/photos";
+import RealPlacePhoto from "../components/RealPlacePhoto";
+import { restaurantPhotos } from "../config/photos";
 import { business } from "../config/business";
 
 export default function Restaurant() {
@@ -26,11 +26,10 @@ export default function Restaurant() {
           className="overflow-hidden rounded-lg"
           style={{ borderRadius: "var(--radius-lg)" }}
         >
-          <SmartImage
-            primary={restaurantPhotos.facade1}
-            fallback={stockPhotos.ambianceBay}
+          <RealPlacePhoto
+            src={restaurantPhotos.facade1}
             alt="Façade de Dar El Hout"
-            fallbackAlt="Restaurant au bord de mer, photo d'illustration"
+            placeholderLabel="Photo de la façade à venir"
             className="h-[320px] w-full object-cover sm:h-[400px]"
           />
         </motion.div>
@@ -69,21 +68,17 @@ export default function Restaurant() {
       </div>
 
       <div className="section-px section-py grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <SmartImage
-          primary={restaurantPhotos.salle2}
-          fallback={stockPhotos.ambianceCandles}
+        <RealPlacePhoto
+          src={restaurantPhotos.salle2}
           alt="Salle de Dar El Hout"
-          fallbackAlt="Ambiance de restaurant, photo d'illustration"
+          placeholderLabel="Photo de la salle à venir"
           className="h-64 w-full rounded-lg object-cover"
-          style={{ borderRadius: "var(--radius-md)" }}
         />
-        <SmartImage
-          primary={restaurantPhotos.facade2}
-          fallback={stockPhotos.grilledFish}
+        <RealPlacePhoto
+          src={restaurantPhotos.facade2}
           alt={`Façade de ${business.name}`}
-          fallbackAlt="Poisson grillé, photo d'illustration"
+          placeholderLabel="Photo de la façade à venir"
           className="h-64 w-full rounded-lg object-cover"
-          style={{ borderRadius: "var(--radius-md)" }}
         />
       </div>
     </div>

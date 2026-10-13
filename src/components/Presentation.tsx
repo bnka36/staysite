@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
 import { useI18n } from "../hooks/useI18n";
 import { business } from "../config/business";
-import SmartImage from "./SmartImage";
-import { restaurantPhotos, stockPhotos } from "../config/photos";
+import RealPlacePhoto from "./RealPlacePhoto";
+import { restaurantPhotos } from "../config/photos";
 
 export default function Presentation() {
   const { t } = useI18n();
@@ -49,13 +49,11 @@ export default function Presentation() {
         className="overflow-hidden rounded-lg"
         style={{ borderRadius: "var(--radius-lg)" }}
       >
-        <SmartImage
-          primary={restaurantPhotos.salle1}
-          fallback={stockPhotos.ambianceBay}
+        <RealPlacePhoto
+          src={restaurantPhotos.salle1}
           alt="Salle du restaurant Dar El Hout"
-          fallbackAlt="Restaurant au bord de mer, photo d'illustration"
+          placeholderLabel="Photo de la salle à venir"
           className="h-[340px] w-full object-cover sm:h-[420px]"
-          loading="lazy"
         />
       </motion.div>
     </section>

@@ -9,15 +9,39 @@ a disclosed stock fallback).
 
 ## How it works
 
-Every image slot tries a **real photo path** first
+Every slot that must show **food** (specialty cards, menu, the
+"illustration" half of the gallery) tries a real photo path first
 (`public/images/restaurant/...`, not included in this repo) and, if
-that file is missing, transparently falls back to a **licensed
-Unsplash stock photo** already included in `public/images/stock/`
-(always captioned "photo d'illustration" / "for illustration" so it's
-never presented as an authentic photo of the restaurant). The Hero
-background falls back to a neutral brand gradient + logo instead of a
-stock photo, so the hero can never be mistaken for a real photo of the
-place.
+missing, falls back to a **licensed Unsplash stock photo** of a dish —
+always captioned "photo d'illustration" so it's never presented as an
+authentic photo of the restaurant.
+
+Slots that must show a **specific place** — the hero, the facade, the
+dining room — are different: they never fall back to a generic stock
+photo of *some* restaurant or *some* view, because that would
+misrepresent a random place as if it were Dar El Hout. Instead:
+- The **hero** falls back to a licensed stock photo of a seafood dish
+  only (no building, no skyline, nothing identifiable as a place), with
+  a small "Photo d'illustration" badge in the corner.
+- The **facade and dining-room** slots (Presentation section, Restaurant
+  page) fall back to an honest "photo coming soon" placeholder card
+  (brand colors + a muted icon) instead of any photo at all.
+- The **gallery** is split into two clearly labelled sections: "Photos
+  authentiques de Dar El Hout" (only ever shows a tile once a real file
+  actually loads successfully — shows a plain text note if none exist
+  yet) and "Nos plats — photos d'illustration" (dish stock photos,
+  always tagged "Illustration").
+
+An earlier version of this site used two additional stock photos
+(`ambiance-bay.webp`, `ambiance-candles.webp`) as fallbacks for the
+facade/dining-room slots. `ambiance-bay.webp` was removed after review
+because it visibly shows the Golden Gate Bridge through a restaurant
+window — a San Francisco view, not El Jadida — which is exactly the
+kind of misleading "fake place" photo this project must avoid.
+`ambiance-candles.webp` was removed for the same reason even though it
+has no identifiable landmark: a generic candle-lit table could still be
+mistaken for Dar El Hout's own dining room. Both files were deleted
+from `public/images/stock/`.
 
 To go live with real photos, just export/save them with these **exact
 filenames** into `public/images/restaurant/` — the matching component
@@ -47,5 +71,7 @@ Tips:
 ## Current stock fallbacks (temporary, licensed)
 
 All files in `public/images/stock/` are real photographs from Unsplash,
-used under the Unsplash License, purely as temporary filler until real
-restaurant photos are supplied. None of them depict Dar El Hout.
+used under the Unsplash License, purely as temporary filler for **food**
+slots until real restaurant photos are supplied. None of them depict a
+building, a room, or any place — only plated dishes, so none of them
+could be mistaken for a photo of Dar El Hout itself.

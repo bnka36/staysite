@@ -3,36 +3,33 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
 import { useI18n } from "../hooks/useI18n";
-import { restaurantPhotos } from "../config/photos";
-import Wordmark from "./Wordmark";
+import { restaurantPhotos, stockPhotos } from "../config/photos";
 
 /**
  * Hero background: tries the restaurant's own photo first
  * (public/images/restaurant/hero.jpg — not shipped in this repo, see
- * PHOTOS.md). If it's missing, falls back to a neutral brand gradient
- * with the wordmark rather than a stock photo, so nothing on the hero
- * could ever be mistaken for an authentic photo of Dar El Hout.
+ * PHOTOS.md). If it's missing, falls back to a licensed stock photo of a
+ * seafood dish (generic plate, no identifiable building or skyline, so it
+ * can never be mistaken for an actual photo of Dar El Hout) and shows a
+ * small, honest "photo d'illustration" badge in the corner.
  */
 function HeroBackground() {
-  const [failed, setFailed] = useState(false);
-
-  if (failed) {
-    return (
-      <div className="absolute inset-0 bg-gradient-to-br from-navy via-ocean to-turquoise">
-        <div className="absolute inset-0 flex items-center justify-center opacity-15">
-          <Wordmark size="lg" theme="dark" className="scale-[2.2] sm:scale-[3]" />
-        </div>
-      </div>
-    );
-  }
+  const [usingFallback, setUsingFallback] = useState(false);
 
   return (
-    <img
-      src={restaurantPhotos.hero}
-      alt=""
-      onError={() => setFailed(true)}
-      className="absolute inset-0 h-full w-full object-cover object-center"
-    />
+    <>
+      <img
+        src={usingFallback ? stockPhotos.heroFallback : restaurantPhotos.hero}
+        alt=""
+        onError={() => setUsingFallback(true)}
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
+      {usingFallback && (
+        <span className="absolute bottom-4 start-4 z-10 rounded-full bg-navy/60 px-3 py-1 text-[11px] font-medium tracking-wide text-ivory/80 backdrop-blur-sm">
+          Photo d'illustration
+        </span>
+      )}
+    </>
   );
 }
 

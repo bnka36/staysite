@@ -38,6 +38,4 @@ export const stockPhotos = {
   paella: `${base}/stock/paella.webp`,
   oysters: `${base}/stock/oysters.webp`,
   salad: `${base}/stock/salad.webp`,
-  ambianceBay: `${base}/stock/ambiance-bay.webp`,
-  ambianceCandles: `${base}/stock/ambiance-candles.webp`,
 };
